@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="a58532ca-2058-4a93-9590-3a6e921e9529" name="CINNK COURS DEMO" url="http://62.210.99.155">
+        <fileTransfer rootFolder="/httpdocs" host="62.210.99.155" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
