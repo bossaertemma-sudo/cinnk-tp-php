@@ -1,9 +1,3 @@
-<?php
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
-?>
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -18,15 +12,9 @@ if (session_status() === PHP_SESSION_NONE) {
 <body>
 <nav>
     <a href="blog.php">Accueil</a>
-
-    <?php if (isset($_SESSION['est_connecte']) &&  $_SESSION['est_connecte']): ?>
-        <a href="ajout_article.php">Ajouter un article</a>
-        <a href="deconnexion.php">Déconnexion</a>
-        <p>
-            Bonjour <?php echo $_SESSION['pseudo']; ?>
-        </p>
-    <?php else: ?>
-        <a href="connexion.php">Connexion</a>
-    <?php endif; ?>
-
-</nav>
+    <a href="ajout_article.php">Ajouter un article</a>
+    <a href="connexion.php">Connexion</a>
+    <a href="contact.php">Nous contacter</a>
+    <?php  require 'connexion.php' ?>
+    <a href="admin.php">admin</a>
+</nav> 

@@ -26,7 +26,7 @@ include 'header.php';
 </a>
 <hr>
 <!--Boucler sur tous les articles en mode tableau assiociatif ['clé' => 'valeur']-->
-<?php while ($article = $requete->fetch(PDO::FETCH_ASSOC)): ?>
+<?php while ($article = $requete ->fetch(PDO::FETCH_ASSOC)): ?>
     <article>
         <h2>
             <a href="article.php?id=<?php echo $article['id']; ?>">
