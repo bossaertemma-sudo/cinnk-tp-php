@@ -13,4 +13,5 @@
 <nav>
     <a href="blog.php">Accueil</a>
     <a href="ajout_article.php">Ajouter un article</a>
+    <a href="connexion.php">Connexion</a>
 </nav>
