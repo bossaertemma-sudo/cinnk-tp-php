@@ -20,20 +20,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
+include 'header.php';
 ?>
-
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>
-        Ajouter un article
-    </title>
-</head>
-<body>
 <h1>
     Ajouter un nouvel article
 </h1>
@@ -44,5 +32,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         Publier
     </button>
 </form>
-</body>
-</html>
+<?php
+include 'footer.php';
+?>

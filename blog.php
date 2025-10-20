@@ -12,18 +12,12 @@ require 'connexion_db.php'; // si le fichier n'existe pas => fatal error.
 
 //récuperer tous les articles trié par ordre de création
 $requete = $pdo->query("SELECT * FROM articles ORDER BY date_creation DESC");
+
+
+include 'header.php';
 ?>
 
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mon blog</title>
-</head>
-<body>
+
 <h1>
     Mon blog
 </h1>
@@ -35,7 +29,7 @@ $requete = $pdo->query("SELECT * FROM articles ORDER BY date_creation DESC");
 <?php while ($article = $requete->fetch(PDO::FETCH_ASSOC)): ?>
     <article>
         <h2>
-            <a href="article.php?id=<?php echo $article['id'];?>">
+            <a href="article.php?id=<?php echo $article['id']; ?>">
                 <?php echo $article['titre']; ?>
             </a>
         </h2>
@@ -56,7 +50,10 @@ $requete = $pdo->query("SELECT * FROM articles ORDER BY date_creation DESC");
                     )) . "...";
             ?>
         </div>
-        <div>
+        <div style="display: flex;gap:10px">
+            <a href="modifier_article.php?id=<?php echo $article['id']; ?>">
+                Modifier l'article
+            </a>
             <form action="supprimer_article.php" method="post">
                 <input type="hidden" name="id" value="<?php echo $article['id'] ?>">
                 <button type="submit" style="font-weight: bold;color: red">
@@ -68,5 +65,6 @@ $requete = $pdo->query("SELECT * FROM articles ORDER BY date_creation DESC");
     </article>
     <hr>
 <?php endwhile; ?>
-</body>
-</html>
+<?php
+include 'footer.php';
+?>
