@@ -35,7 +35,7 @@ $requete = $pdo->query("SELECT * FROM articles ORDER BY date_creation DESC");
 <?php while ($article = $requete->fetch(PDO::FETCH_ASSOC)): ?>
     <article>
         <h2>
-            <a href="article.php?id=<?php echo $article['id'];?>">
+            <a href="article.php?id=<?php echo $article['id']; ?>">
                 <?php echo $article['titre']; ?>
             </a>
         </h2>
@@ -56,7 +56,10 @@ $requete = $pdo->query("SELECT * FROM articles ORDER BY date_creation DESC");
                     )) . "...";
             ?>
         </div>
-        <div>
+        <div style="display: flex;gap:10px">
+            <a href="modifier_article.php?id=<?php echo $article['id']; ?>">
+                Modifier l'article
+            </a>
             <form action="supprimer_article.php" method="post">
                 <input type="hidden" name="id" value="<?php echo $article['id'] ?>">
                 <button type="submit" style="font-weight: bold;color: red">
